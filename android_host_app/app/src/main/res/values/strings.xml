@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BSC Host</string>
+    <string name="account_info">Khách hàng: %1$s · Mã KH: %2$s</string>
+    <string name="symbol_hint">Mã CK gợi ý (tuỳ chọn), vd: FPT</string>
+    <string name="open_dca">Đầu tư định kỳ (Flutter)</string>
+    <string name="engine_warmed">Engine đã warm-up khi mở app.</string>
+</resources>

@@ -1,0 +1,15 @@
+.DS_Store
+.dart_tool/
+.packages
+.pub/
+build/
+.idea/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Thư mục host dev do Flutter sinh lại mỗi lần `flutter pub get` (không commit)
+.ios/
+.android/
+
+# LƯU Ý: KHÔNG ignore lib/src/pigeons/*.g.dart — code Pigeon sinh ra là một phần của module, cần commit.

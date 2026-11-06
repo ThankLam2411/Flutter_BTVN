@@ -1,0 +1,30 @@
+name: dca_flutter_module
+description: "BSC - Flutter Module Đầu tư định kỳ (DCA), nhúng vào app iOS native (Add-to-App)."
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+# Không dùng plugin bên thứ 3 => XCFramework gọn, không lo conflict thư viện native với Host App.
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # dev_dependency => không đi vào artifact. Pin major để code Swift/Dart sinh ra ổn định.
+  pigeon: ^22.6.0
+
+flutter:
+  uses-material-design: true
+
+  # Đánh dấu đây là Flutter Module (flutter create --template=module).
+  # .ios/ và .android/ được sinh lại mỗi lần `flutter pub get` => không sửa, không commit.
+  module:
+    androidX: true
+    androidPackage: vn.com.bsc.dca_flutter_module
+    iosBundleIdentifier: vn.com.bsc.dcaFlutterModule

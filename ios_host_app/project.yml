@@ -1,0 +1,37 @@
+# XcodeGen spec – sinh DcaHost.xcodeproj:  brew install xcodegen && xcodegen generate
+# (Không dùng XcodeGen thì làm tay theo README mục "Tích hợp XCFramework thủ công".)
+name: DcaHost
+options:
+  bundleIdPrefix: vn.com.bsc
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+targets:
+  DcaHost:
+    type: application
+    platform: iOS
+    sources:
+      - path: DcaHost
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.com.bsc.dcahost
+        INFOPLIST_FILE: DcaHost/Info.plist
+        TARGETED_DEVICE_FAMILY: "1"
+        # Link framework theo cấu hình build: Debug -> Flutter/Debug, Release -> Flutter/Release
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)/Flutter/$(CONFIGURATION)
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        # Flutter.xcframework không có bitcode / chỉ arm64 cho simulator Apple Silicon
+        ENABLE_BITCODE: NO
+    dependencies:
+      # Output của: dca_flutter_module/tool/build_ios_framework.sh
+      - framework: Flutter/Release/Flutter.xcframework
+        embed: true
+      - framework: Flutter/Release/App.xcframework
+        embed: true
+      # FlutterPluginRegistrant: link nhưng không Embed (theo hướng dẫn Module 11)
+      - framework: Flutter/Release/FlutterPluginRegistrant.xcframework
+        embed: false

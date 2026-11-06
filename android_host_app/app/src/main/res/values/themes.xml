@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DcaHost" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#00796B</item>
+        <item name="colorPrimaryDark">#004D40</item>
+        <item name="colorAccent">#00796B</item>
+    </style>
+
+    <!-- Theme cho DcaFlutterActivity: nền trắng, không action bar (Flutter tự vẽ AppBar). -->
+    <style name="Theme.DcaHost.Flutter" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+# XCFramework build từ Flutter Module (sinh lại bằng tool/build_ios_framework.sh)
+Flutter/
+# Sinh bằng `xcodegen generate`
+DcaHost.xcodeproj/
+xcuserdata/
+DerivedData/
+.DS_Store
+# LƯU Ý: KHÔNG ignore DcaHost/Bridge/DcaMessages.g.swift (code Pigeon sinh ra, cần commit)

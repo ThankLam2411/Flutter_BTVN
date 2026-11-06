@@ -1,0 +1,9 @@
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+captures/
+# LƯU Ý: KHÔNG ignore app/src/main/kotlin/.../bridge/DcaMessages.g.kt (code Pigeon sinh ra, cần commit)
